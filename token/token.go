@@ -22,4 +22,13 @@ const (
 	// Delimiters
 	COMMA     = ","
 	SEMICOLOR = ";"
+
+	LPAREN = "("
+	RPAREN = ")"
+	LBRACE = "{"
+	RBRACE = "}"
+
+	// Keywords
+	FUNCTION = "FUNCTION"
+	LET      = "LET"
 )
