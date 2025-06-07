@@ -9,14 +9,15 @@ func TestNextToken(t *testing.T) {
 	input := `let five = 5;
 	let ten = 10;
 	let add = fn(x, y) {
-	x + y;
+		x + y;
 	};
 	let result = add(five, ten);
-	`
+		!-/*5;
+	5 < 10 > 5;`
 
 	tests := []struct {
 		expectedType    token.TokenType
-		epxectedLiteral string
+		expectedLiteral string
 	}{
 		{token.LET, "let"},
 		{token.IDENT, "five"},
@@ -65,8 +66,8 @@ func TestNextToken(t *testing.T) {
 			t.Fatalf("tests[%d] - tokentype wrong. expected=%q, got=%q", i, tt.expectedType, tok.Type)
 		}
 
-		if tok.Literal != tt.epxectedLiteral {
-			t.Fatalf("tests[%d] - literal wrong. expected=%q, got=%q", i, tt.epxectedLiteral, tok.Literal)
+		if tok.Literal != tt.expectedLiteral {
+			t.Fatalf("tests[%d] - literal wrong. expected=%q, got=%q", i, tt.expectedLiteral, tok.Literal)
 		}
 	}
 }
